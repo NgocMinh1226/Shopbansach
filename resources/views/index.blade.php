@@ -193,7 +193,7 @@
 
 	</section>
 
-	<section id="client-holder" data-aos="fade-up">
+	<!-- <section id="client-holder" data-aos="fade-up">
 		<div class="container">
 			<div class="row">
 				<div class="inner-content">
@@ -205,11 +205,11 @@
 							<a href="#"><img src="public/frontend/images/client-image4.png" alt="client"></a>
 							<a href="#"><img src="public/frontend/images/client-image5.png" alt="client"></a>
 						</div>
-					</div><!--image-holder-->
+					</div> //image-holder
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 
 	<section id="featured-books" class="py-5 my-5">
 		<div class="container">
@@ -767,7 +767,7 @@
 		</div>
 	</section>
 
-	<section id="quotation" class="align-center pb-5 mb-5">
+	<!-- <section id="quotation" class="align-center pb-5 mb-5">
 		<div class="inner-content">
 			<h2 class="section-title divider">Quote of the day</h2>
 			<blockquote data-aos="fade-up">
@@ -776,9 +776,9 @@
 				<div class="author-name">Dr. Seuss</div>
 			</blockquote>
 		</div>
-	</section>
+	</section> -->
 
-	<section id="special-offer" class="bookshelf pb-5 mb-5">
+	<!-- <section id="special-offer" class="bookshelf pb-5 mb-5">
 
 		<div class="section-header align-center">
 			<div class="title">
@@ -864,14 +864,14 @@
 									<div class="item-price">$ 40.00</div>
 								</figcaption>
 							</div>
-						</div><!--grid-->
+						</div> //grid 
 					</div>
-				</div><!--inner-content-->
+				</div> //inner-content
 			</div>
 		</div>
-	</section>
+	</section> -->
 
-	<section id="subscribe">
+	<!-- <section id="subscribe">
 		<div class="container">
 			<div class="row justify-content-center">
 
@@ -906,9 +906,9 @@
 
 			</div>
 		</div>
-	</section>
+	</section> -->
 
-	<section id="latest-blog" class="py-5 my-5">
+	<!-- <section id="latest-blog" class="py-5 my-5">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
@@ -951,7 +951,7 @@
 												</li>
 											</ul>
 										</div>
-									</div><!--links-element-->
+									</div> //links-element
 
 								</div>
 							</article>
@@ -984,7 +984,7 @@
 												</li>
 											</ul>
 										</div>
-									</div><!--links-element-->
+									</div> //links-element
 
 								</div>
 							</article>
@@ -1017,7 +1017,7 @@
 												</li>
 											</ul>
 										</div>
-									</div><!--links-element-->
+									</div> //links-element
 
 								</div>
 							</article>
@@ -1036,9 +1036,9 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 
-	<section id="download-app" class="leaf-pattern-overlay">
+	<!-- <section id="download-app" class="leaf-pattern-overlay">
 		<div class="corner-pattern-overlay"></div>
 		<div class="container">
 			<div class="row justify-content-center">
@@ -1068,9 +1068,9 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 
-	<footer id="footer">
+	<!-- <footer id="footer">
 		<div class="container">
 			<div class="row">
 
@@ -1179,12 +1179,12 @@
 				</div>
 
 			</div>
-			<!-- / row -->
+			/ row 
 
 		</div>
-	</footer>
+	</footer> -->
 
-	<div id="footer-bottom">
+	<!-- <div id="footer-bottom">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
@@ -1216,12 +1216,12 @@
 							</div>
 
 						</div>
-					</div><!--grid-->
+					</div> //grid
 
-				</div><!--footer-bottom-content-->
+				</div> //footer-bottom-content
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 	<script src="public/frontend/js/jquery-1.11.0.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
