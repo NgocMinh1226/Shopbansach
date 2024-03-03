@@ -8,7 +8,19 @@ class HomeController extends Controller
 {
     public function index()
     {
-        //layout.blade.php
-        return view('index');
+        return view('pages.home');
     }
+
+    public function category_book()
+    {
+        return view('pages.category_book');
+    }
+
+    public function user_profile()
+    {
+        return view('pages.user_profile');
+    }
+
+    
+    
 }
