@@ -16,9 +16,9 @@ use Inertia\Inertia;
 */
 
 Route::get('/', 'App\Http\Controllers\HomeController@index');
-Route::get('dangnhap', 'App\Http\Controllers\CustomerController@login_customer');
-Route::get('dangky', 'App\Http\Controllers\CustomerController@register_customer');
-Route::get('dangxuat', 'App\Http\Controllers\CustomerController@logout_customer');
+Route::get('/dangnhap', 'App\Http\Controllers\CustomerController@login_customer');
+Route::get('/dangky', 'App\Http\Controllers\CustomerController@register_customer');
+Route::get('/dangxuat', 'App\Http\Controllers\CustomerController@logout_customer');
 
 
 Route::post('/login-customer-login', 'App\Http\Controllers\CustomerController@login_customer_login');
