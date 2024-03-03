@@ -20,7 +20,6 @@ Route::get('/dangnhap', 'App\Http\Controllers\CustomerController@login_customer'
 Route::get('/dangky', 'App\Http\Controllers\CustomerController@register_customer');
 Route::get('/dangxuat', 'App\Http\Controllers\CustomerController@logout_customer');
 
-
 Route::post('/login-customer-login', 'App\Http\Controllers\CustomerController@login_customer_login');
 
 Route::post('/add-customer', 'App\Http\Controllers\CustomerController@add_customer');

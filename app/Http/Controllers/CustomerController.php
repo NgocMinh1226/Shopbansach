@@ -20,6 +20,7 @@ class CustomerController extends Controller
         return view('pages.register');
     }
 
+    
     public function login_customer_login(Request $request)
     {
         $email = $request->email_account;
