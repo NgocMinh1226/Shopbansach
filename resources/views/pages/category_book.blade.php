@@ -7,6 +7,7 @@
     }
 </style>
 
+<div style="margin-top: 135px;"></div>
 <!-- MAIN CONTENT -->
 <main class="category-books-section">
     <div class="category-page container grid grid-category">
