@@ -26,4 +26,11 @@ Route::post('/login-customer-login', 'App\Http\Controllers\CustomerController@lo
 Route::post('/add-customer', 'App\Http\Controllers\CustomerController@add_customer');
 
 
+Route::get('/category-book', 'App\Http\Controllers\HomeController@category_book');
+Route::get('/details-book', 'App\Http\Controllers\ProductController@details_book');
+Route::get('/cart', 'App\Http\Controllers\CartController@cart');
+Route::get('/user-profile', 'App\Http\Controllers\HomeController@user_profile');
+
+
+
 

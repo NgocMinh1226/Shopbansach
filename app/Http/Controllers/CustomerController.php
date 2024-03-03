@@ -13,13 +13,11 @@ class CustomerController extends Controller
 {
     public function login_customer()
     {
-        //login.blade.php
-        return view('login');
+        return view('pages.login');
     }
     public function register_customer()
     {
-        //register.blade.php
-        return view('register');
+        return view('pages.register');
     }
 
     public function login_customer_login(Request $request)
