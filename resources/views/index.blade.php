@@ -17,13 +17,21 @@
 	<link rel="stylesheet" href="{{asset('public/frontend/css/cart.css')}}" />
     <link rel="stylesheet" href="{{asset('public/frontend/css/authentication.css')}}" />
     <link rel="stylesheet" href="{{asset('public/frontend/css/user-form.css')}}" />
-
+    <link href="{{asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css')}}" rel="stylesheet">
 
 	<script type="module" defer src="{{asset('public/frontend/scripts/index.js')}}"></script>
 	<title>The BookSale</title>
 </head>
 
 <body>
+
+@if(session('status'))
+<script>
+  // Sử dụng JavaScript để hiển thị cửa sổ thông báo
+  alert("{{ session('status') }}");
+</script>
+@endif
+
 	<!-- HEADER -->
 	<header>
 		<section class="header margin-bottom-sm">
@@ -55,9 +63,32 @@
 							<a href="{{URL::to('/cart')}}" class="cart header-link"><ion-icon class="cart-icon" name="cart-sharp"></ion-icon></a>
 							<span class="cart-quantity">0</span>
 						</li>
+
+
+						@if(session('customer_name'))
+
+
+						<li class="main-nav-item">
+							<a href="{{URL::to('/user-profile')}}" class="header-link">{{ session('customer_name') }}</a>
+						</li>
+
+						<li class="main-nav-item">
+							<a href="{{URL::to('/dangxuat')}}" class="header-link">
+								
+							<i class="fas fa-sign-out-alt"></i>
+							</a>
+						</li>
+						
+                        @else
+
 						<li class="main-nav-item">
 							<a href="{{URL::to('/dangnhap')}}" class="header-link">Đăng nhập</a>
 						</li>
+
+                        @endif
+
+
+
 						<li class="main-nav-item dropdown hide">
 							<a class="user header-link dropdown-toggle" href="#"><img class="profile-img" src="{{asset('public/frontend/imgs/user.png')}}" alt="User's profile photo" /></a>
 							<ul class="user-list dropdown-menu">
@@ -190,6 +221,7 @@
 	<script defer src="{{asset('public/frontend/scripts/index.js')}}"></script>
   <script defer src="{{asset('public/frontend/scripts/user.js')}}"></script>
   <script defer src="{{asset('public/frontend/scripts/cart.js')}}"></script>
+  
 
 </body>
 
