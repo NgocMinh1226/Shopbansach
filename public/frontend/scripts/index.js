@@ -107,3 +107,71 @@ function removeSelectedLinks(listContainer) {
 // sticky navigation
 const sectionSliderEl = document.querySelector(".section-slider");
 stickyHeader(sectionSliderEl);
+
+let thisPage = 1;
+let items = 8;
+const btnprev = document.querySelector(".prev");
+  const btnnext = document.querySelector(".next");
+function pagimation() {
+  let beginGet = items * (thisPage - 1);
+  let endGet = items * thisPage - 1;
+  const listBooksPagimation = document.querySelectorAll('.book-card');
+
+  listBooksPagimation.forEach((item, index) => {
+    if (index >= beginGet && index <= endGet) {
+      item.style.display = "block";
+    } else {
+      item.style.display = "none";
+    }
+  });
+
+  listPage();
+}
+
+function listPage() {
+  const listBooksPagimation = document.querySelectorAll('.book-card');
+  const storePagination = document.querySelector(".pages");
+  storePagination.innerHTML = "";
+
+  let count = Math.ceil(listBooksPagimation.length / items);
+
+  for (let i = 1; i <= count; i++) {
+    let li = document.createElement('li');
+    li.textContent = i;
+    li.classList = "pagination-btn";
+    if (i === thisPage) {
+      li.classList.add("active");
+    }
+    li.addEventListener("click", () => changePage(i));
+    storePagination.appendChild(li);
+  }
+
+  
+
+  if (thisPage <= 1) {
+    btnprev.style.display = "none";
+  } else {
+    btnprev.style.display = "block";
+  }
+
+  if (thisPage >= count) {
+    btnnext.style.display = "none";
+  } else {
+    btnnext.style.display = "block";
+  }
+
+}
+if(btnnext){
+btnnext.addEventListener("click", () => changePage(thisPage + 1));
+}
+if(btnprev){
+btnprev.addEventListener("click", () => changePage(thisPage - 1));
+}
+function changePage(i) {
+  thisPage = i;
+  
+  pagimation();
+}
+
+pagimation();
+
