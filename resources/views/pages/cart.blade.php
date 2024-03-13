@@ -21,84 +21,85 @@
                     <h1 class="cart-head">Sách đã thêm</h1>
                     <?php
                     $content = Cart::content();
+                    // // Sử dụng print_r
+                    // echo '<pre>';
+                    // print_r($content);
+                    // echo '</pre>';
+                    // 
                     ?>
+
+                    @if($content->isNotEmpty())
                     @foreach($content as $v_content)
-                    
+
+
                     <div class="cart-book">
-                        <form action="#" class="cart-book__form">
-                            <input type="checkbox" class="checkbox margin-right-md" />
+                        <!-- <form action="#" > -->
+                        <form class="cart-book__form" action="{{URL::to('/update-cart-quantity')}}" method="post">
+                            {{csrf_field()}}
+                            <!-- <input type="checkbox" class="checkbox margin-right-md" /> -->
+
                             <div class="img-box margin-right-sm">
-                                <img class="cart-img" src="{{asset('public/frontend/imgs/top-books/book1.jpeg')}}" alt="Cay cam ngot cua toi" />
+                                <img class="cart-img" src="{{URL::to('public/uploads/product/'.$v_content->options->image)}}" alt="img" />
                             </div>
                             <p class="cart-book-title margin-right-super">
-                                Cây cam ngọt của tôi nha nha ban dung co chat
+                                {{$v_content->name}}
                             </p>
+
                             <div class="price-tag margin-right-super">
                                 <p class="price-tag__sale">{{number_format($v_content->price)}}<span>đ</span></p>
                                 <!-- <p class="price-tag__origin">100.000<span>đ</span></p> -->
                             </div>
-                            <div class="quantity-box__cart quantity-box margin-right-super">
-                                <button class="btn-decrease">-</button>
-                                <input type="number" min="1" value="1" />
-                                <button class="btn-increase">+</button>
-                            </div>
-                            <button type="submit" class="btn-detele-item">
-                                <ion-icon class="delete-icon" name="trash-outline"></ion-icon>
-                            </button>
-                        </form>
-                    </div>
 
-                    <!-- <div class="cart-book">
-                        <form action="#" class="cart-book__form">
-                            <input type="checkbox" class="checkbox margin-right-md" />
-                            <div class="img-box margin-right-sm">
-                                <img class="cart-img" src="{{asset('public/frontend/imgs/top-books/book1.jpeg')}}" alt="Cay cam ngot cua toi" />
+                            <!-- <form action="{{URL::to('/update-cart-quantity')}}" method="post"> -->
+
+
+                            <div class="quantity-box__cart quantity-box margin-right-super">
+                                <!-- <button type="button" class="btn-decrease">-</button> -->
+                                <input style="width: 70px; border-radius: 10px; color: #000; padding: 10px 5px; border: 1px solid #1a8e8b" name="cart_quantity" value="{{$v_content->qty}}" type="number" min="1" value="1" />
+                                <input type="hidden" value="{{$v_content->rowId}}" name="rowId_cart">
+                                <!-- <button type="button" class="btn-increase">+</button> -->
+                                <button type="submit" value="Cập nhật" name="update_qty" style="width: 70px; border-radius: 10px ;margin-left: 10px;background-color: #1a8e8b; color: #fff; padding: 10px 5px; border: none; cursor: pointer;">Cập nhật</button>
+
                             </div>
-                            <p class="cart-book-title margin-right-super">Cây cam</p>
+
+                            <!-- JavaScript -->
+
 
                             <div class="price-tag margin-right-super">
-                                <p class="price-tag__sale">67.000<span>đ</span></p>
-                                <p class="price-tag__origin">100.000<span>đ</span></p>
+                                <p class="price-tag__sale">
+                                    <?php
+                                    $subtotal = $v_content->price * $v_content->qty;
+                                    echo number_format($subtotal);
+                                    ?><span>đ</span></p>
+                                <!-- <p class="price-tag__origin">100.000<span>đ</span></p> -->
                             </div>
-                            <div class="quantity-box__cart quantity-box margin-right-super">
-                                <button class="btn-decrease">-</button>
-                                <input type="number" min="1" value="1" />
-                                <button class="btn-increase">+</button>
-                            </div>
-                            <button type="submit" class="btn-detele-item">
+
+
+                            <a onclick="return confirm('Bạn có chắc muốn xóa sản phẩm này không?')" href="{{URL::to('/delete-to-cart/'.$v_content->rowId)}}" title="Delete" data-toggle="tooltip" class="btn btn-sm btn-primary">
                                 <ion-icon class="delete-icon" name="trash-outline"></ion-icon>
-                            </button>
+                            </a>
+
+                            <!-- </form> -->
+
                         </form>
+
+                        <!-- <button class="btn-detele-item">
+
+                        </button> -->
                     </div>
-
-                    <div class="cart-book">
-                        <form action="#" class="cart-book__form">
-                            <input type="checkbox" class="checkbox margin-right-md" />
-                            <div class="img-box margin-right-sm">
-                                <img class="cart-img" src="{{asset('public/frontend/imgs/top-books/book1.jpeg')}}" alt="Cay cam ngot cua toi" />
-                            </div>
-                            <p class="cart-book-title margin-right-super">
-                                Cây cam ngọt của tôi
-                            </p>
-
-                            <div class="price-tag margin-right-super">
-                                <p class="price-tag__sale">67.000<span>đ</span></p>
-                                <p class="price-tag__origin">100.000<span>đ</span></p>
-                            </div>
-                            <div class="quantity-box__cart quantity-box margin-right-super">
-                                <button class="btn-decrease">-</button>
-                                <input type="number" min="1" value="1" />
-                                <button class="btn-increase">+</button>
-                            </div>
-                            <button type="submit" class="btn-detele-item">
-                                <ion-icon class="delete-icon" name="trash-outline"></ion-icon>
-                            </button>
-                        </form>
-                    </div> -->
                     @endforeach
+
+                    @else
+                    
+                    <div class="cart-book">
+                        <h3>Giỏ hàng trống!</h3>
+                    </div>
+                    @endif
+
+
                 </div>
 
-                <div class="address-section">
+                <!-- <div class="address-section">
                     <h1 class="cart-head">Thông tin nhận hàng</h1>
                     <form action="#" method="POST" class="address-form address-form_cart">
                         <div class="address-group">
@@ -150,10 +151,10 @@
                             </div>
                         </div>
                     </form>
-                </div>
+                </div> -->
             </div>
             <aside class="customer-info">
-                <div class="address-box">
+                <!-- <div class="address-box">
                     <div class="address-header">
                         <p class="address-heading">Giao tới</p>
                         <a href="#" class="change-address__link">Thay đổi</a>
@@ -166,9 +167,9 @@
                         <span>Nhà</span>
                         1/2 đường số 7, Phường Bình Thọ, Thành phố Thủ Đức, Hồ Chí Minh
                     </address>
-                </div>
+                </div> -->
                 <!-- payment method -->
-                <div class="payment-method">
+                <!-- <div class="payment-method">
                     <h2 class="payment-method-title">Phương thức thanh toán</h2>
                     <div class="payment-method-options">
                         <label class="payment-method-option">
@@ -184,28 +185,60 @@
                             <span class="payment-method-option-text" selected>Tiền mặt</span>
                         </label>
                     </div>
-                </div>
+                </div> -->
 
                 <div class="total-price-section">
                     <h2 class="price-title">Thanh toán</h2>
                     <div class="subtotal">
                         <span>Tạm tính:</span>
-                        <p><span class="money">100.000</span><span>đ</span></p>
+                        <p><span class="">{{Cart::subtotal()}}</span><span>đ</span></p>
                     </div>
                     <div class="shipping">
                         <span>Phí ship:</span>
-                        <p><span class="money">15.000</span><span>đ</span></p>
+                        <p><span class="money">0</span><span>đ</span></p>
                     </div>
-                    <div class="discount">
+                    <div class="subtotal">
                         <span>Giảm giá:</span>
-                        <p><span class="money">100.000</span><span>đ</span></p>
+                        <p><span class="money">0</span><span>đ</span></p>
                     </div>
-                    <div class="total">
+                    <div class="subtotal">
                         <span>Tổng tiền:</span>
-                        <p><span class="money">0.000</span><span>đ</span></p>
+                        <p>
+                            <span class="money">{{Cart::subtotal()}}</span><span>đ</span>
+                        </p>
                     </div>
                 </div>
-                <button class="btn btn--radius btn-order">Đặt sách</button>
+
+
+                <?php
+                $customer_id = Session::get('customer_id');
+                if ($customer_id != null) {
+                ?>
+                    <?php
+                    if (Cart::subtotal() == 0) {
+                    ?>
+                        <a href="">
+                            <!-- <button class="btn btn-block btn-primary my-3 py-3">Vui lòng thêm sản phẩm vào giỏ hàng!</button> -->
+                        </a>
+                    <?php
+                    } else {
+                    ?>
+                        <a style="text-decoration: none;" href="{{ URL::to('/checkout') }}">
+                            <button class="btn btn--radius btn-order">Tiến hành thanh toán</button>
+                        </a>
+                    <?php
+                    }
+                    ?>
+                <?php
+                } else {
+                ?>
+                    <a style="text-decoration: none;" href="{{ URL::to('/dangnhap') }}">
+                        <!-- <button class="btn btn-block btn-primary my-3 py-3">Vui lòng đăng nhập!</button> -->
+                        <button class="btn btn--radius btn-order">Vui lòng đăng nhập</button>
+                    </a>
+                <?php
+                }
+                ?>
             </aside>
         </div>
     </section>
