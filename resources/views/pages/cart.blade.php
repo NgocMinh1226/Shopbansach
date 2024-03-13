@@ -19,6 +19,12 @@
             <div class="cart-main">
                 <div class="book-container">
                     <h1 class="cart-head">Sách đã thêm</h1>
+                    <?php
+                    // $content = Cart::content();
+                    ?>
+                    <!-- @foreach($content as $v_content) -->
+
+
                     <div class="cart-book">
                         <form action="#" class="cart-book__form">
                             <input type="checkbox" class="checkbox margin-right-md" />
@@ -29,8 +35,8 @@
                                 Cây cam ngọt của tôi nha nha ban dung co chat
                             </p>
                             <div class="price-tag margin-right-super">
-                                <p class="price-tag__sale">67.000<span>đ</span></p>
-                                <p class="price-tag__origin">100.000<span>đ</span></p>
+                                <p class="price-tag__sale">{{number_format($v_content->price)}}<span>đ</span></p>
+                                <!-- <p class="price-tag__origin">100.000<span>đ</span></p> -->
                             </div>
                             <div class="quantity-box__cart quantity-box margin-right-super">
                                 <button class="btn-decrease">-</button>
@@ -42,7 +48,8 @@
                             </button>
                         </form>
                     </div>
-                    <div class="cart-book">
+
+                    <!-- <div class="cart-book">
                         <form action="#" class="cart-book__form">
                             <input type="checkbox" class="checkbox margin-right-md" />
                             <div class="img-box margin-right-sm">
@@ -64,6 +71,7 @@
                             </button>
                         </form>
                     </div>
+
                     <div class="cart-book">
                         <form action="#" class="cart-book__form">
                             <input type="checkbox" class="checkbox margin-right-md" />
@@ -87,7 +95,9 @@
                                 <ion-icon class="delete-icon" name="trash-outline"></ion-icon>
                             </button>
                         </form>
-                    </div>
+                    </div> -->
+
+                    <!-- @endforeach -->
                 </div>
 
                 <div class="address-section">

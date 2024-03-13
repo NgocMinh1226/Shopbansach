@@ -20,18 +20,26 @@
                 </div>
 
                 <div class="top-books grid grid-5--columns">
+
+                    @foreach($all_product as $key => $product)
+
                     <div class="top-book">
                         <div class="tb-img-box">
-                            <a href="{{URL::to('/details-book')}}">
-                                <img class="tb-img" src="{{asset('public/frontend/imgs/top-books/book1.jpeg')}}" alt="Cây cam ngọt của tôi" />
+                            <a href="{{URL::to('/details-book/'.$product->product_id)}}">
+                                <img class="tb-img" src="{{URL::to('public/uploads/product/'.$product->product_image)}}" alt="Cây cam ngọt của tôi" />
                             </a>
                         </div>
                         <div class="tb-text-box">
-                            <p class="tb-title">Cây cam ngọt của tôi</p>
-                            <p class="tb-author">Jose Mauro de Vasconcelos</p>
+                            <p class="tb-title">{{($product->product_name)}}</p>
+                            <p class="tb-author">{{($product->product_author)}}</p>
+                            
                         </div>
                     </div>
-                    <div class="top-book">
+
+                    @endforeach
+
+
+                    <!-- <div class="top-book">
                         <div class="tb-img-box">
                             <img class="tb-img" src="{{asset('public/frontend/imgs/top-books/book2.jpeg')}}" alt="Cây cam ngọt của tôi" />
                         </div>
@@ -66,7 +74,7 @@
                             <p class="tb-title">Số đỏ</p>
                             <p class="tb-author">Vũ Trọng Phụng</p>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </section>
             <!-- PRODUCT SECTION -->
