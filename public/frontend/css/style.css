@@ -256,6 +256,8 @@ header {
 }
 
 .category-dropdown {
+  overflow-y: auto;
+  height: 100px;
   z-index: 2000;
   background-color: rgba(255, 255, 255, 0.94);
 }
@@ -797,4 +799,10 @@ header {
 .address {
   color: #767676;
   margin-bottom: 2.4rem;
+}
+
+.hahaha {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Hiển thị 2 cột */
+  /* Các thuộc tính khác nếu cần */
 }

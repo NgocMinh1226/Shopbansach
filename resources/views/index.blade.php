@@ -20,7 +20,7 @@
     <link href="{{asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css')}}" rel="stylesheet">
 
 	<script type="module" defer src="{{asset('public/frontend/scripts/index.js')}}"></script>
-	<title>The BookSale</title>
+	<title>THE BOX</title>
 </head>
 
 <body>
@@ -42,12 +42,13 @@
 				</button>
 
 				<div class="header-left">
-					<a href="{{URL::to('/')}}" class="logo"><span class="header-logo">BOOKSALE</span></a>
+					<img  src="{{asset('public/public/uploads/truyen/5557.png')}}" alt="Logo shopbansach" width="50" height="50" >
+					<a href="{{URL::to('/')}}" class="logo"><span class="header-logo">THE BOX</span></a>
 				</div>
 
-				<form action="#" class="search-form">
+				<form action="{{url('tim-kiem')}}" method="GET" class="search-form">
 					<label for="search-input" class="search-icon"><ion-icon name="search"></ion-icon></label>
-					<input type="text" id="search-input" class="margin-right-sm" placeholder="Tìm kiếm sách..." />
+					<input type="text" id="keywords" name="tukhoa" class="margin-right-sm" placeholder="Tìm kiếm sách..." />
 					<button class="btn btn--full btn--search">search</button>
 					<button class="btn-close-search">
 						<ion-icon name="close-outline" class="icon-close-form"></ion-icon>
@@ -107,20 +108,11 @@
 				<div class="container">
 					<ul class="nav-list">
 						<li class="dropdown">
-							<a href="#" class="nav-link dropdown-toggle">Danh mục</a>
-							<ul class="category-dropdown dropdown-menu">
-								<li>
-									<a class="{{URL::to('/category-book')}}" href="book.html">Tiểu thuyết - văn học</a>
-								</li>
-								<li><a class="{{URL::to('/category-book')}}" href="#">Sách kinh tế</a></li>
-								<li><a class="{{URL::to('/category-book')}}" href="#">Sách khoa học</a></li>
-								<li><a class="{{URL::to('/category-book')}}" href="#">Sách self-help</a></li>
-								<li>
-									<a class="{{URL::to('/category-book')}}" href="#">Sách tâm lí tội phạm</a>
-								</li>
-								<li><a class="{{URL::to('/category-book')}}" href="#">Sách thiếu nhi</a></li>
-								<li><a class="{{URL::to('/category-book')}}" href="#">Sách bán chạy</a></li>
-								<li><a class="{{URL::to('/category-book')}}" href="#">Sách mới</a></li>
+							<a href="" class="nav-link dropdown-toggle">Danh mục</a>
+							<ul style="height: 500px" class="category-dropdown dropdown-menu">
+								@foreach($danhmuc as $key => $danh)
+									<li><a class="nav-link" href="{{URL('danh-muc/'.$danh->slug_danhmuc)}}" >{{$danh->tendanhmuc}}</a></li>
+								@endforeach
 							</ul>
 						</li>
 						<li><a href="{{URL::to('/category-book')}}" class="nav-link">Sách mới</a></li>
@@ -190,17 +182,17 @@
 				<address class="contacts">
 					<p class="address">1 Võ Văn Ngânn - Thủ Đức - Hồ Chí Minh</p>
 					<p>
-						<a class="footer-link" href="tel:0383314133">0383314133</a><br />
-						<a class="footer-link" href="dtb742002@gmail.com">dtb742002@gmail.com</a>
+						<a class="footer-link" href="tel:0383314133">0123456789</a><br />
+						<a class="footer-link" href="dtb742002@gmail.com">zxcvvbnm@gmail.com</a>
 					</p>
 				</address>
 			</div>
 			<nav class="nav-col">
 				<p class="footer-heading">Tài khoản</p>
 				<ul class="footer-nav">
-					<li><a class="footer-link" href="#">Tạo tài khoản</a></li>
-					<li><a class="footer-link" href="#">Đăng ký</a></li>
-					<li><a class="footer-link" href="#">Cá nhân</a></li>
+					<li><a class="footer-link" href="{{url('/dangnhap')}}">Tạo tài khoản</a></li>
+					<li><a class="footer-link" href="{{url('/dangky')}}">Đăng ký</a></li>
+					<li><a class="footer-link" href="{{url('/user-profile')}}">Cá nhân</a></li>
 				</ul>
 			</nav>
 

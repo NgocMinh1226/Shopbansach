@@ -10,7 +10,7 @@
 
 <main class="user-info-container">
     <h2 class="heading-secondary">Chỉnh sửa thông tin cá nhân</h2>
-    <form action="#" method="POST" class="address-form">
+    <form action="#" method="HEAD" class="address-form">
       <div class="form-sections">
         <div class="form-group">
           <div class="form-control">
@@ -44,6 +44,7 @@
             <label for="district">Quận / Huyện</label>
             <select id="district" name="district" required>
               <option value="">Chọn quận (huyện)</option>
+              <option value="district">Province 1</option>
               <!-- Add more options as needed -->
             </select>
           </div>
@@ -52,6 +53,7 @@
             <label for="city">Phường / Xã</label>
             <select id="ward" name="ward" required>
               <option value="">Chọn phường (xã)</option>
+              <option value="ward">Province 1</option>
               <!-- Add more options as needed -->
             </select>
           </div>

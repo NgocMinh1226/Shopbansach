@@ -99,6 +99,103 @@
                     <a href="book-detail.html" class="book-link">
                         <span class="discount-tag">-30%</span>
                         <div class="img-container">
+                            <img src="{{asset('public/frontend/imgs/top-books/book4.jpeg')}}" alt="Book Cover" class="card-img" />
+                        </div>
+                        <div class="card-body">
+                            <p class="card-title">
+                                Đắc nhân tâm sĩ diện hảo cây cam ngọt của tôi
+                            </p>
+                            <div class="rating" class="card-rating">
+                                <span class="rating-number">4.8</span><span><ion-icon name="star"></ion-icon></span><span class="rating-text">Đã bán 200</span>
+                            </div>
+                            <div class="card-prices">
+                                <span class="card-discount">76.000đ</span>
+                                <span class="card-price">100.000đ</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="book-card">
+                    <a href="book-detail.html" class="book-link">
+                        <span class="discount-tag">-30%</span>
+                        <div class="img-container">
+                            <img src="{{asset('public/frontend/imgs/top-books/book4.jpeg')}}" alt="Book Cover" class="card-img" />
+                        </div>
+                        <div class="card-body">
+                            <p class="card-title">
+                                Đắc nhân tâm sĩ diện hảo cây cam ngọt của tôi
+                            </p>
+                            <div class="rating" class="card-rating">
+                                <span class="rating-number">4.8</span><span><ion-icon name="star"></ion-icon></span><span class="rating-text">Đã bán 200</span>
+                            </div>
+                            <div class="card-prices">
+                                <span class="card-discount">76.000đ</span>
+                                <span class="card-price">100.000đ</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="book-card">
+                    <a href="book-detail.html" class="book-link">
+                        <span class="discount-tag">-30%</span>
+                        <div class="img-container">
+                            <img src="{{asset('public/frontend/imgs/top-books/book4.jpeg')}}" alt="Book Cover" class="card-img" />
+                        </div>
+                        <div class="card-body">
+                            <p class="card-title">
+                                Đắc nhân tâm sĩ diện hảo cây cam ngọt của tôi
+                            </p>
+                            <div class="rating" class="card-rating">
+                                <span class="rating-number">4.8</span><span><ion-icon name="star"></ion-icon></span><span class="rating-text">Đã bán 200</span>
+                            </div>
+                            <div class="card-prices">
+                                <span class="card-discount">76.000đ</span>
+                                <span class="card-price">100.000đ</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="book-card">
+                    <a href="book-detail.html" class="book-link">
+                        <span class="discount-tag">-30%</span>
+                        <div class="img-container">
+                            <img src="{{asset('public/frontend/imgs/top-books/book1.jpeg')}}" alt="Book Cover" class="card-img" />
+                        </div>
+                        <div class="card-body">
+                            <p class="card-title">Cây cam ngọt của tôi</p>
+                            <div class="rating" class="card-rating">
+                                <span class="rating-number">4.8</span><span><ion-icon name="star"></ion-icon></span><span class="rating-text">Đã bán 200</span>
+                            </div>
+                            <div class="card-prices">
+                                <span class="card-discount">76.000đ</span>
+                                <span class="card-price">100.000đ</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="book-card">
+                    <a href="book-detail.html" class="book-link">
+                        <span class="discount-tag">-30%</span>
+                        <div class="img-container">
+                            <img src="{{asset('public/frontend/imgs/top-books/book1.jpeg')}}" alt="Book Cover" class="card-img" />
+                        </div>
+                        <div class="card-body">
+                            <p class="card-title">Cây cam ngọt của tôi</p>
+                            <div class="rating" class="card-rating">
+                                <span class="rating-number">4.8</span><span><ion-icon name="star"></ion-icon></span><span class="rating-text">Đã bán 200</span>
+                            </div>
+                            <div class="card-prices">
+                                <span class="card-discount">76.000đ</span>
+                                <span class="card-price">100.000đ</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="book-card">
+                    <a href="book-detail.html" class="book-link">
+                        <span class="discount-tag">-30%</span>
+                        <div class="img-container">
                             <img src="{{asset('public/frontend/imgs/top-books/book1.jpeg')}}" alt="Book Cover" class="card-img" />
                         </div>
                         <div class="card-body">
@@ -278,16 +375,16 @@
             </div>
             <div class="pagination">
                 <button class="pagination-btn prev" path="tieu-thuyet">
-                    <ion-icon name="chevron-back-outline"></ion-icon>
+                    <ion-icon  name="chevron-back-outline"></ion-icon>
                 </button>
 
-                <div class="pages">
-                    <a href="#" class="pagination-btn active">1</a>
-                    <a href="#" class="pagination-btn">2</a>
-                    <a href="#" class="pagination-btn">3</a>
-                    <a href="#" class="pagination-btn">4</a>
-                    <a class="pagination-btn">...</a>
-                </div>
+                <ul class="pages">
+                    <!-- <li href="" class="pagination-btn active">1</li>
+                    <li href="" class="pagination-btn">2</li>
+                    <li href="" class="pagination-btn">3</li>
+                    <li href="" class="pagination-btn">4</li>
+                    <li class="pagination-btn">...</li> -->
+                </ul>
 
                 <button class="pagination-btn next" path="tieu-thuyet">
                     <ion-icon name="chevron-forward-outline"></ion-icon>

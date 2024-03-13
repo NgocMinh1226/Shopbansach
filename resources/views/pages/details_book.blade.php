@@ -10,9 +10,12 @@
 <!-- MAIN CONTENT -->
 <div style="margin-top: 145px;"></div>
 <main class="detail-section">
+
     <section class="product-detail container grid detail-grid">
         <div class="detail-img-box">
-            <img src="{{asset('public/frontend/imgs/top-books/book5.jpeg')}}" alt="" class="main-img" />
+            @foreach($truyen as $key => $value)
+                <img src="{{asset('public/public/uploads/truyen/'.$value->hinhanh)}}" alt="" class="main-img" />
+            @endforeach
             <div class="detail-imgs">
                 <div class="detail-img"></div>
                 <div class="detail-img"></div>
@@ -23,9 +26,11 @@
         <div class="detail-text-box">
             <div class="main-info">
                 <div class="title margin-bottom-lg">
-                    <p class="author margin-bottom-sm">Tác giả: Vũ Trọng Phụng</p>
+                    @foreach($truyen as $key => $value)
+                    <p class="author margin-bottom-sm">Tác giả: {{$value->tacgia}}</p>
+                    @endforeach
                     <h1 class="heading-secondary margin-bottom-md">
-                        Số đỏ (Tái bản 2020)
+                        {{$value->tentruyen}}
                     </h1>
                     <div class="rating-box">
                         <div class="rating-icons padding-r-sm">
@@ -43,12 +48,8 @@
                 </div>
                 <!-- pricing -->
                 <div class="detail-pricing margin-bottom-lg">
-                    <div class="pricing-box">
-                        <p class="sell-price padding-r-md">60.000<span>đ</span></p>
-                        <p class="original-price padding-r-md">100.000<span>đ</span></p>
-                    </div>
-                    <div class="discount-box padding-r-sm">
-                        <p class="discount">Giảm giá <span>30%</span></p>
+                    <div  class="pricing-box">
+                        <p class="sell-price padding-r-md">{{$value->giatien}}</p>
                     </div>
                 </div>
             </div>
@@ -117,7 +118,7 @@
                 <ul class="detail-info-list">
                     <li class="detail-item margin-bottom-sm">
                         <p class="detail-label">Tác giả:</p>
-                        <p class="detail-content">Vũ Trọng Phụng</p>
+                        <p class="detail-content">{{$value->tacgia}}</p>
                     </li>
                     <li class="detail-item margin-bottom-sm">
                         <p class="detail-label">Nhà xuất bản:</p>
@@ -149,22 +150,9 @@
             <div class="book-description">
                 <h1 class="heading-tertiary">Mô tả sách</h1>
                 <p class="description">
-                    Số đỏ là một tiểu thuyết của nhà văn Vũ Trọng Phụng, được viết vào
-                    năm 1936 và xuất bản lần đầu năm 1937. Đây là một trong những tác
-                    phẩm văn học có ảnh hưởng lớn nhất trong thời kỳ phát triển tiểu
-                    thuyết Việt Nam từ năm 1930 đến 1945. Số đỏ là một tiểu thuyết của
-                    nhà văn Vũ Trọng Phụng, được viết vào năm 1936 và xuất bản lần đầu
-                    năm 1937. Đây là một trong những tác phẩm văn học có ảnh hưởng lớn
-                    nhất trong thời kỳ phát triển tiểu thuyết Việt Nam từ năm 1930 đến
-                    1945. Số đỏ là một tiểu thuyết của nhà văn Vũ Trọng Phụng, được
-                    viết vào năm 1936 và xuất bản lần đầu năm 1937. Đây là một trong
-                    những tác phẩm văn học có ảnh hưởng lớn nhất trong thời kỳ phát
-                    triển tiểu thuyết Việt Nam từ năm 1930 đến 1945. Số đỏ là một tiểu
-                    thuyết của nhà văn Vũ Trọng Phụng, được viết vào năm 1936 và xuất
-                    bản lần đầu năm 1937. Đây là một trong những tác phẩm văn học có
-                    ảnh hưởng lớn nhất trong thời kỳ phát triển tiểu thuyết Việt Nam.
+                    {{$value->mota}}
                 </p>
-                <a class="more">Xem thêm</a>
+                <a style="cursor:pointer;" class="more" >Xem thêm</a>
             </div>
         </div>
         <form class="buy-form">
@@ -183,6 +171,7 @@
             <button class="btn btn-buy">Chọn mua</button>
             <button class="btn btn-add-to-cart">Thêm vào giỏ</button>
         </form>
+        
     </section>
 
     <div class="modal" id="myModal">

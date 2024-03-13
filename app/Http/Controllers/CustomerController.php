@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use App\Models\DanhmucTruyen;
+use App\Models\Truyen;
 
 use DB;
 use Session;
@@ -13,11 +15,15 @@ class CustomerController extends Controller
 {
     public function login_customer()
     {
-        return view('pages.login');
+        $danhmuc = DanhmucTruyen::orderBy('id', 'DESC')->get();
+        $truyen = Truyen::orderBy('id','DESC')->where('kichhoat',0)->get();
+        return view('pages.login')->with(compact('danhmuc','truyen'));
     }
     public function register_customer()
     {
-        return view('pages.register');
+        $danhmuc = DanhmucTruyen::orderBy('id', 'DESC')->get();
+        $truyen = Truyen::orderBy('id','DESC')->where('kichhoat',0)->get();
+        return view('pages.register')->with(compact('danhmuc','truyen'));
     }
 
     

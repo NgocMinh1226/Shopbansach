@@ -40,12 +40,12 @@
         </div>
         <div class="form-control">
           <label class="margin-bottom-sm" for="fullName">Tên đăng nhập</label>
-          <input type="text" name="customer_name" id="fullName" th:field="*{fullName}" placeholder="Bui Thanh Duy" />
+          <input type="text" name="customer_name" id="fullName" th:field="*{fullName}" placeholder="Họ và tên của bạn..." />
         </div>
 
         <div class="form-control">
           <label class="margin-bottom-sm" for="email">Email đăng nhập</label>
-          <input type="email" name="customer_email" id="email" placeholder="dtb174@gmail.com" />
+          <input type="email" name="customer_email" id="email" placeholder="Email của bạn..." />
         </div>
 
         <div class="form-control">

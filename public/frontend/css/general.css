@@ -258,7 +258,8 @@ body {
   list-style: none;
   background-color: #fff;
   box-shadow: 0 0rem 1.8rem rgba(0, 0, 0, 0.1);
-
+  overflow-y: auto;
+  height: 100px;
   opacity: 0;
 
   visibility: hidden;

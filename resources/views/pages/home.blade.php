@@ -7,8 +7,8 @@
         <div class="product-section container">
             <section class="top-product-section">
                 <div class="tp-header margin-bottom-lg">
-                    <p class="subheading">Sản phẩm nổi bật</p>
-                    <div class="tp-btn-section">
+                    <p class="subheading">Sách truyện mới cập nhật</p>
+                    <!-- <div class="tp-btn-section">
                         <button class="btn btn--full btn--all">Xem tất cả</button>
                         <button class="btn-circle btn-pre">
                             <ion-icon name="chevron-back-outline"></ion-icon>
@@ -16,59 +16,37 @@
                         <button class="btn-circle btn-next">
                             <ion-icon name="chevron-forward-outline"></ion-icon>
                         </button>
-                    </div>
+                    </div> -->
                 </div>
-
-                <div class="top-books grid grid-5--columns">
-                    <div class="top-book">
-                        <div class="tb-img-box">
-                            <a href="{{URL::to('/details-book')}}">
-                                <img class="tb-img" src="{{asset('public/frontend/imgs/top-books/book1.jpeg')}}" alt="Cây cam ngọt của tôi" />
-                            </a>
+                <div class="top-books grid grid-5--columns" >
+                    @foreach($truyen as $key => $value)
+                        <div class="top-book"  >
+                            <div class="tb-img-box">
+                                <a href="{{url('details-book/'.$value->slug_truyen)}}">
+                                    <img class="tb-img" src="{{asset('public/public/uploads/truyen/'.$value->hinhanh)}}" alt="{{$value->tentruyen}}" />
+                                </a>
+                            </div>
+                            <div class="tb-text-box">
+                                <p class="tb-title">{{$value->tentruyen}}</p>
+                                <p class="tb-author">{{$value->tacgia}}</p><br>
+                                <p class="tb-author">{{$value->giatien}}</p><br>
+                            </div>
                         </div>
-                        <div class="tb-text-box">
-                            <p class="tb-title">Cây cam ngọt của tôi</p>
-                            <p class="tb-author">Jose Mauro de Vasconcelos</p>
-                        </div>
-                    </div>
-                    <div class="top-book">
-                        <div class="tb-img-box">
-                            <img class="tb-img" src="{{asset('public/frontend/imgs/top-books/book2.jpeg')}}" alt="Cây cam ngọt của tôi" />
-                        </div>
-                        <div class="tb-text-box">
-                            <p class="tb-title">Toto-chan bên cửa sổ</p>
-                            <p class="tb-author">Tetsuko Kuroyanagi</p>
-                        </div>
-                    </div>
-                    <div class="top-book">
-                        <div class="tb-img-box">
-                            <img class="tb-img" src="{{asset('public/frontend/imgs/top-books/book3.jpeg')}}" alt="Cây cam ngọt của tôi" />
-                        </div>
-                        <div class="tb-text-box">
-                            <p class="tb-title">Lược sử kinh tế học</p>
-                            <p class="tb-author">Niall Kishtainy</p>
-                        </div>
-                    </div>
-                    <div class="top-book">
-                        <div class="tb-img-box">
-                            <img class="tb-img" src="{{asset('public/frontend/imgs/top-books/book4.jpeg')}}" alt="Cây cam ngọt của tôi" />
-                        </div>
-                        <div class="tb-text-box">
-                            <p class="tb-title">Đắc nhân tâm</p>
-                            <p class="tb-author">Dale Carnegie</p>
-                        </div>
-                    </div>
-                    <div class="top-book">
-                        <div class="tb-img-box">
-                            <img class="tb-img" src="{{asset('public/frontend/imgs/top-books/book5.jpeg')}}" alt="Cây cam ngọt của tôi" />
-                        </div>
-                        <div class="tb-text-box">
-                            <p class="tb-title">Số đỏ</p>
-                            <p class="tb-author">Vũ Trọng Phụng</p>
-                        </div>
-                    </div>
-                </div>
+                    @endforeach
+                </div><br>
             </section>
+
+
+
+
+
+
+
+
+
+
+
+
             <!-- PRODUCT SECTION -->
             <section class="products">
                 <div class="bookshelf">
