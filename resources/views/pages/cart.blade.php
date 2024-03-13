@@ -20,11 +20,10 @@
                 <div class="book-container">
                     <h1 class="cart-head">Sách đã thêm</h1>
                     <?php
-                    // $content = Cart::content();
+                    $content = Cart::content();
                     ?>
-                    <!-- @foreach($content as $v_content) -->
-
-
+                    @foreach($content as $v_content)
+                    
                     <div class="cart-book">
                         <form action="#" class="cart-book__form">
                             <input type="checkbox" class="checkbox margin-right-md" />
@@ -96,8 +95,7 @@
                             </button>
                         </form>
                     </div> -->
-
-                    <!-- @endforeach -->
+                    @endforeach
                 </div>
 
                 <div class="address-section">
