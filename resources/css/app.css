@@ -1,0 +1,13 @@
+/* styles.css */
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transform: rotate(45deg); /* Xoay 45 độ */
+    background-color: #f8c291; /* Màu nền */
+    color: #fff; /* Màu chữ */
+    padding: 10px;
+    border-radius: 50%; /* Làm tròn viền */
+    display: inline-block;
+}
