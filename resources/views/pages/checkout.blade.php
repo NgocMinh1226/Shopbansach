@@ -25,12 +25,13 @@
                     <div class="book-container">
                         <h1 class="cart-head">Đơn hàng</h1>
                         <?php
+
                         $content = Cart::content();
-                        // // Sử dụng print_r
+                        // Sử dụng print_r
                         // echo '<pre>';
                         // print_r($content);
                         // echo '</pre>';
-                        // 
+                        
                         ?>
 
                         @if($content->isNotEmpty())
@@ -262,10 +263,10 @@
                             <span>Tạm tính:</span>
                             <p><span class="">{{Cart::subtotal()}}</span><span>đ</span></p>
                         </div>
-                        <div class="shipping">
+                        <!-- <div class="shipping">
                             <span>Phí ship:</span>
                             <p><span class="money">0</span><span>đ</span></p>
-                        </div>
+                        </div> -->
                         <div class="subtotal">
                             <span>Giảm giá:</span>
                             <p><span class="money">0</span><span>đ</span></p>

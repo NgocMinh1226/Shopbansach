@@ -37,7 +37,6 @@ class ComposerAutoloaderInit8ef234f1a5803899dfb90a6bc5357c16
         $requireFile = \Closure::bind(static function ($fileIdentifier, $file) {
             if (empty($GLOBALS['__composer_autoload_files'][$fileIdentifier])) {
                 $GLOBALS['__composer_autoload_files'][$fileIdentifier] = true;
-
                 require $file;
             }
         }, null, null);

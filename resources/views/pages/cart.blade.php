@@ -21,11 +21,11 @@
                     <h1 class="cart-head">Sách đã thêm</h1>
                     <?php
                     $content = Cart::content();
-                    // // Sử dụng print_r
+                    // Sử dụng print_r
                     // echo '<pre>';
                     // print_r($content);
                     // echo '</pre>';
-                    // 
+
                     ?>
 
                     @if($content->isNotEmpty())
@@ -34,7 +34,7 @@
 
                     <div class="cart-book">
                         <!-- <form action="#" > -->
-                        <form class="cart-book__form" action="{{URL::to('/update-cart-quantity')}}" method="post">
+                        <form class="cart-book__form" action="{{URL::to('/update-cart-quantity')}}" method="post" onsubmit="return validateFormCart(this);">
                             {{csrf_field()}}
                             <!-- <input type="checkbox" class="checkbox margin-right-md" /> -->
 
@@ -52,7 +52,6 @@
 
                             <!-- <form action="{{URL::to('/update-cart-quantity')}}" method="post"> -->
 
-
                             <div class="quantity-box__cart quantity-box margin-right-super">
                                 <!-- <button type="button" class="btn-decrease">-</button> -->
                                 <input style="width: 70px; border-radius: 10px; color: #000; padding: 10px 5px; border: 1px solid #1a8e8b" name="cart_quantity" value="{{$v_content->qty}}" type="number" min="1" value="1" />
@@ -62,7 +61,23 @@
 
                             </div>
 
-                            <!-- JavaScript -->
+                            <script>
+                                function validateFormCart(form) {
+                                    var qtyInput = form.elements['cart_quantity'];
+                                    var qty = parseInt(qtyInput.value);
+                                    var max_qty = parseInt("{{$v_content->options->qty_inventory}}"); // Lấy giá trị max_qty từ biến PHP
+
+                                    if (qty > max_qty) {
+                                        if (confirm('Số lượng hiện có là ' + max_qty + '. Bạn có muốn cập nhật theo số lượng hiện có không?')) {
+                                            qtyInput.value = max_qty; // Gán lại giá trị tối đa vào trường nhập liệu
+                                            return true;
+                                        } else {
+                                            return false;
+                                        }
+                                    }
+                                    return true;
+                                }
+                            </script>
 
 
                             <div class="price-tag margin-right-super">
@@ -90,11 +105,13 @@
                     @endforeach
 
                     @else
-                    
+
                     <div class="cart-book">
                         <h3>Giỏ hàng trống!</h3>
                     </div>
                     @endif
+
+
 
 
                 </div>
@@ -193,10 +210,10 @@
                         <span>Tạm tính:</span>
                         <p><span class="">{{Cart::subtotal()}}</span><span>đ</span></p>
                     </div>
-                    <div class="shipping">
+                    <!-- <div class="shipping">
                         <span>Phí ship:</span>
                         <p><span class="money">0</span><span>đ</span></p>
-                    </div>
+                    </div> -->
                     <div class="subtotal">
                         <span>Giảm giá:</span>
                         <p><span class="money">0</span><span>đ</span></p>
