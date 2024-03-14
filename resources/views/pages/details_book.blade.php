@@ -171,8 +171,10 @@
                 <a class="more">Xem thêm</a>
             </div>
         </div>
-        <form class="buy-form" action="{{URL::to('/save-cart/')}}" method="post">
-        <input name="productid_hidden" type="hidden" value="{{$value->product_id}}" />
+        <form class="buy-form" action="{{URL::to('/save-cart')}}" method="post">
+            {{csrf_field()}}
+
+            <input name="productid_hidden" type="hidden" value="{{$value->product_id}}" />
             <!-- <div class="detail-address margin-bottom-lg">
                 <p class="shipped-address">
                     Giao đến: <span>An Ninh Tây, Tuy An, Phú Yên</span>
@@ -188,37 +190,37 @@
 
                 <button class="btn-increase">+</button>
             </div>
-            <!-- <button class="btn btn-buy">Chọn mua</button> -->
-            <button class="btn btn-add-to-cart" type="submit">Thêm vào giỏ</button>
+            <button class="btn btn-buy" type="submit">Thêm vào giỏ</button>
+            <!-- <button class="btn btn-add-to-cart" >Thêm vào giỏ</button> -->
 
             <script>
-                    $('form').submit(function(event) {
-                        var qty = parseInt($('input[name="qty"]').val()); // Lấy giá trị số lượng sản phẩm người dùng nhập vào
-                        var max_qty = {
-                            {
-                                $value - > product_qty
-                            }
-                        }; // Lấy giá trị số lượng sản phẩm có sẵn từ PHP
-                        if (qty > max_qty) {
-                            event.preventDefault(); // Ngăn không cho form gửi đi nếu số lượng sản phẩm vượt quá số lượng có sẵn
-                            if (confirm('Số lượng sản phẩm vượt quá số lượng có sẵn. Bạn có muốn đặt theo số lượng có sẵn không?')) {
-                                $('input[name="qty"]').val(max_qty); // Nếu người dùng đồng ý thì gán giá trị số lượng sản phẩm là số lượng tối đa có sẵn
-                            }
-                        }
-                    });
-                </script>
+                // $('form').submit(function(event) {
+                //     var qty = parseInt($('input[name="qty"]').val()); // Lấy giá trị số lượng sản phẩm người dùng nhập vào
+                //     var max_qty = {
+                //         {
+                //             $value - > product_qty
+                //         }
+                //     }; // Lấy giá trị số lượng sản phẩm có sẵn từ PHP
+                //     if (qty > max_qty) {
+                //         event.preventDefault(); // Ngăn không cho form gửi đi nếu số lượng sản phẩm vượt quá số lượng có sẵn
+                //         if (confirm('Số lượng sản phẩm vượt quá số lượng có sẵn. Bạn có muốn đặt theo số lượng có sẵn không?')) {
+                //             $('input[name="qty"]').val(max_qty); // Nếu người dùng đồng ý thì gán giá trị số lượng sản phẩm là số lượng tối đa có sẵn
+                //         }
+                //     }
+                // });
+            </script>
 
         </form>
     </section>
 
-    <div class="modal" id="myModal">
+    <!-- <div class="modal" id="myModal">
         <div class="modal-content">
             <span class="close" id="closeModal">&times;</span>
             <h2>Thêm thành công</h2>
             <p>Giỏ hàng đã được thêm vào sản phẩm</p>
             <button id="modalCloseButton">OK</button>
         </div>
-    </div>
+    </div> -->
 </main>
 
 

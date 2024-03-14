@@ -13,7 +13,7 @@ class CartController extends Controller
     // thêm sản phẩm vào giỏ hàng
     public function save_cart(Request $request)
     {
-        
+
         // dd($request->all());
         $productId = $request->productid_hidden;
         $quantity = $request->qty;
@@ -21,21 +21,22 @@ class CartController extends Controller
         $data['id'] = $product_info->product_id;
         $data['qty'] = $quantity;   
         $data['name'] = $product_info->product_name;
+
         $data['price'] = $product_info->product_price;
         $data['weight'] = $product_info->product_price;
 
-        $data['options']['sizes'] = $request->product_size;
-        $data['options']['colors'] = $request->product_color;
+        // $data['options']['sizes'] = $request->product_size;
+        // $data['options']['colors'] = $request->product_color;
 
-        if($data['options']['sizes'] == null){
-            return redirect('/chi-tiet-san-pham/' . $productId)
-            ->with('status', 'Vui lòng chọn kích thước trước khi thêm vào giỏ hàng!');
-        }
+        // if($data['options']['sizes'] == null){
+        //     return redirect('/chi-tiet-san-pham/' . $productId)
+        //     ->with('status', 'Vui lòng chọn kích thước trước khi thêm vào giỏ hàng!');
+        // }
 
-        if($data['options']['colors']  == null){
-            return redirect('/chi-tiet-san-pham/' . $productId)
-            ->with('status', 'Vui lòng chọn màu sắc trước khi thêm vào giỏ hàng!');
-        }
+        // if($data['options']['colors']  == null){
+        //     return redirect('/chi-tiet-san-pham/' . $productId)
+        //     ->with('status', 'Vui lòng chọn màu sắc trước khi thêm vào giỏ hàng!');
+        // }
 
         if($data['qty']  == 0){
             return redirect('/chi-tiet-san-pham/' . $productId)

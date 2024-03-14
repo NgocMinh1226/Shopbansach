@@ -105,8 +105,8 @@ class CustomerController extends Controller
             $customer_id = DB::table('customers')->insertGetId($data);
 
             if ($customer_id) {
-                Session::put('customer_id', $customer_id);
-                Session::put('customer_name', $request->customer_name);
+                // Session::put('customer_id', $customer_id);
+                // Session::put('customer_name', $request->customer_name);
                 return redirect('/dangnhap')->with('status', 'Đăng ký tài khoản thành công! Vui lòng đăng nhập!');
             }
         }

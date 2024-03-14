@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 13, 2024 lúc 08:54 AM
+-- Thời gian đã tạo: Th3 13, 2024 lúc 02:54 PM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -44,7 +44,10 @@ CREATE TABLE `customers` (
 INSERT INTO `customers` (`customer_id`, `customer_name`, `customer_email`, `customer_password`, `customer_phone`, `created_at`, `updated_at`) VALUES
 (1, 'minh12', 'minh12@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '0393345453', NULL, NULL),
 (3, 'Jennie Nguyen', 'hquan20020915@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '0123456789', NULL, NULL),
-(4, 'Jennie Nguyen', 'binh12@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '0437855433', NULL, NULL);
+(4, 'Jennie Nguyen', 'binh12@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '0437855433', NULL, NULL),
+(5, 'quanhoang12', 'quanhoang12@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '0389938957', NULL, NULL),
+(6, 'quan123', 'quanhoang123@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '0389938957', NULL, NULL),
+(7, 'Jennie Nguyen', 'minhtien0704@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '0389938957', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -136,9 +139,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('1DM7SRwO5DsGny7nS9eJ2vpBzQppNOorn5Rx1e6F', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoicVcxVHZWMzBYZHR5bm9EcUZSSldxc3hEMUJ2ZUVGbHU1VVV4NUFjZCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly9sb2NhbGhvc3QvYm9va3N0b3JlL2NhcnQiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1710312878),
-('jkRl0Axq6UzHSknIWANmAgq3LbMMZWkdC4eSXyLY', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36', 'YTo1OntzOjk6Il9wcmV2aW91cyI7YToxOntzOjM6InVybCI7czozNToiaHR0cDovL2xvY2FsaG9zdC9ib29rc3RvcmUvZGFuZ25oYXAiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjY6Il90b2tlbiI7czo0MDoiWVdCNDQ3ODBUTzN1R0NrTDJBb3AwNGRDVHQxblh1M0Jlclhkb0FQUCI7czoxMToiY3VzdG9tZXJfaWQiO2k6NDtzOjEzOiJjdXN0b21lcl9uYW1lIjtzOjEzOiJKZW5uaWUgTmd1eWVuIjt9', 1709487182),
-('M6IDtuFwghavZr0e0YJQzirMueIYnobIfByWIbSr', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiang3SENvYVk1T1RJSFNhRk5KTjMySm9BQ25lNURUTU5KWHJMMmpyeSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mzk6Imh0dHA6Ly9sb2NhbGhvc3QvYm9va3N0b3JlL2RldGFpbHMtYm9vayI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1710265878);
+('1DM7SRwO5DsGny7nS9eJ2vpBzQppNOorn5Rx1e6F', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36', 'YTozOntzOjk6Il9wcmV2aW91cyI7YToxOntzOjM6InVybCI7czoyNjoiaHR0cDovL2xvY2FsaG9zdC9ib29rc3RvcmUiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjY6Il90b2tlbiI7czo0MDoiQ0tSNDNsbmVGRXNGS0FZOHpENVdhN2ZNY29aclI5NDBJZlJvamtjcCI7fQ==', 1710337868);
 
 -- --------------------------------------------------------
 
@@ -177,6 +178,58 @@ CREATE TABLE `tbl_category_product` (
 INSERT INTO `tbl_category_product` (`category_id`, `category_name`, `category_desc`, `category_status`, `created_at`, `updated_at`) VALUES
 (1, 'Sách kinh tế', 'skt', 1, NULL, NULL),
 (2, 'Sách mới', 'sm', 1, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tbl_order`
+--
+
+CREATE TABLE `tbl_order` (
+  `order_id` int(11) NOT NULL,
+  `order_code` varchar(255) NOT NULL,
+  `customer_id` int(11) NOT NULL,
+  `shipping_id` int(11) NOT NULL,
+  `payment_id` int(11) NOT NULL,
+  `order_total` varchar(100) NOT NULL,
+  `order_status` int(1) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tbl_order_details`
+--
+
+CREATE TABLE `tbl_order_details` (
+  `order_details_id` int(10) UNSIGNED NOT NULL,
+  `order_id` int(11) NOT NULL,
+  `order_code` varchar(255) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `product_name` varchar(255) NOT NULL,
+  `product_size` varchar(100) DEFAULT NULL,
+  `product_color` varchar(100) DEFAULT NULL,
+  `product_price` varchar(50) NOT NULL,
+  `product_sales_quantity` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tbl_payment`
+--
+
+CREATE TABLE `tbl_payment` (
+  `payment_id` int(10) NOT NULL,
+  `payment_method` varchar(255) NOT NULL,
+  `payment_status` int(2) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -234,6 +287,27 @@ CREATE TABLE `tbl_publisher` (
 
 INSERT INTO `tbl_publisher` (`publisher_id`, `publisher_name`, `address`, `contact_information`) VALUES
 (1, 'Kim Đồng', 'Số 55 Quang Trung, Nguyễn Du, Hai Bà Trưng, Hà Nội', 'cskh_online@nxbkimdong.com.vn');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tbl_shipping`
+--
+
+CREATE TABLE `tbl_shipping` (
+  `shipping_id` int(10) NOT NULL,
+  `shipping_name` varchar(255) NOT NULL,
+  `shipping_note` varchar(200) DEFAULT NULL,
+  `shipping_address` varchar(255) NOT NULL,
+  `shipping_phone` varchar(255) NOT NULL,
+  `shipping_email` varchar(255) NOT NULL,
+  `shipping_country` varchar(200) DEFAULT NULL,
+  `shipping_state` varchar(200) DEFAULT NULL,
+  `shipping_city` varchar(200) DEFAULT NULL,
+  `shipping_zipcode` varchar(200) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -315,6 +389,27 @@ ALTER TABLE `tbl_category_product`
   ADD PRIMARY KEY (`category_id`);
 
 --
+-- Chỉ mục cho bảng `tbl_order`
+--
+ALTER TABLE `tbl_order`
+  ADD PRIMARY KEY (`order_id`),
+  ADD KEY `payment_id` (`payment_id`),
+  ADD KEY `shipping_id` (`shipping_id`);
+
+--
+-- Chỉ mục cho bảng `tbl_order_details`
+--
+ALTER TABLE `tbl_order_details`
+  ADD PRIMARY KEY (`order_details_id`),
+  ADD KEY `order_id` (`order_id`);
+
+--
+-- Chỉ mục cho bảng `tbl_payment`
+--
+ALTER TABLE `tbl_payment`
+  ADD PRIMARY KEY (`payment_id`);
+
+--
 -- Chỉ mục cho bảng `tbl_product`
 --
 ALTER TABLE `tbl_product`
@@ -327,6 +422,12 @@ ALTER TABLE `tbl_product`
 --
 ALTER TABLE `tbl_publisher`
   ADD PRIMARY KEY (`publisher_id`);
+
+--
+-- Chỉ mục cho bảng `tbl_shipping`
+--
+ALTER TABLE `tbl_shipping`
+  ADD PRIMARY KEY (`shipping_id`);
 
 --
 -- Chỉ mục cho bảng `users`
@@ -343,7 +444,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT cho bảng `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT cho bảng `failed_jobs`
@@ -376,6 +477,24 @@ ALTER TABLE `tbl_category_product`
   MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT cho bảng `tbl_order`
+--
+ALTER TABLE `tbl_order`
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+
+--
+-- AUTO_INCREMENT cho bảng `tbl_order_details`
+--
+ALTER TABLE `tbl_order_details`
+  MODIFY `order_details_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
+
+--
+-- AUTO_INCREMENT cho bảng `tbl_payment`
+--
+ALTER TABLE `tbl_payment`
+  MODIFY `payment_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
+
+--
 -- AUTO_INCREMENT cho bảng `tbl_product`
 --
 ALTER TABLE `tbl_product`
@@ -388,6 +507,12 @@ ALTER TABLE `tbl_publisher`
   MODIFY `publisher_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT cho bảng `tbl_shipping`
+--
+ALTER TABLE `tbl_shipping`
+  MODIFY `shipping_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
+
+--
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
@@ -396,6 +521,19 @@ ALTER TABLE `users`
 --
 -- Các ràng buộc cho các bảng đã đổ
 --
+
+--
+-- Các ràng buộc cho bảng `tbl_order`
+--
+ALTER TABLE `tbl_order`
+  ADD CONSTRAINT `tbl_order_ibfk_1` FOREIGN KEY (`payment_id`) REFERENCES `tbl_payment` (`payment_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tbl_order_ibfk_2` FOREIGN KEY (`shipping_id`) REFERENCES `tbl_shipping` (`shipping_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Các ràng buộc cho bảng `tbl_order_details`
+--
+ALTER TABLE `tbl_order_details`
+  ADD CONSTRAINT `tbl_order_details_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `tbl_order` (`order_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Các ràng buộc cho bảng `tbl_product`
