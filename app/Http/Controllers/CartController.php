@@ -13,7 +13,6 @@ class CartController extends Controller
     // thêm sản phẩm vào giỏ hàng
     public function save_cart(Request $request)
     {
-
         // dd($request->all());
         $productId = $request->productid_hidden;
         $quantity = $request->qty;
@@ -24,6 +23,7 @@ class CartController extends Controller
 
         $data['price'] = $product_info->product_price;
         $data['weight'] = $product_info->product_price;
+        
 
         // $data['options']['sizes'] = $request->product_size;
         // $data['options']['colors'] = $request->product_color;
@@ -44,10 +44,10 @@ class CartController extends Controller
         }
 
         $data['options']['image'] = $product_info->product_image;
+        $data['options']['qty_inventory'] = $product_info->product_qty;
         Cart::add($data);
 
         return Redirect::to('/show-cart');
-
     }
 
     // hiển thị giỏ hàng

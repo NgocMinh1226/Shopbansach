@@ -38,25 +38,27 @@
                             <ion-icon name="star"></ion-icon>
                             <ion-icon name="star"></ion-icon>
                         </div>
+
                         <p class="rating-numbe padding-l-sm padding-r-md">
-                            ( Xem 370 đánh giá )
+                            <!-- ( Xem 370 đánh giá ) -->
+                            Sản phẩm hiện có: {{$value->product_qty}}
                         </p>
                         <p class="rating-number padding-l-md">Đã bán {{$value->product_sold}}
                         </p>
                     </div>
                 </div>
 
-
                 <!-- pricing -->
                 <div class="detail-pricing margin-bottom-lg">
                     <div class="pricing-box">
-                        <p class="sell-price padding-r-md">{{number_format($value->product_price)}}<span>đ</span></p>
+                        <p class="sell-price padding-r-md">
+                            Giá sản phẩm: {{ number_format($value->product_price, 0, ',', '.') }}<span>đ</span></p>
                         <!-- <p class="original-price padding-r-md">
                              <span>đ</span> 
                         </p> -->
                     </div>
                     <div class="discount-box padding-r-sm">
-                        <p class="discount">Giá<span> khuyến mãi</span></p>
+                        <p class="discount"><span></span></p>
                     </div>
                 </div>
             </div>
@@ -128,6 +130,10 @@
                     <ion-icon name="chevron-back-outline"></ion-icon>
                 </button>
             </div>
+
+
+
+
             <!-- detail information -->
             <div class="detail-infomation">
                 <h1 class="heading-tertiary">Thông tin chi tiết</h1>
@@ -171,7 +177,7 @@
                 <a class="more">Xem thêm</a>
             </div>
         </div>
-        <form class="buy-form" action="{{URL::to('/save-cart')}}" method="post">
+        <form class="buy-form" action="{{URL::to('/save-cart')}}" method="post" onsubmit="return validateForm()">
             {{csrf_field()}}
 
             <input name="productid_hidden" type="hidden" value="{{$value->product_id}}" />
@@ -193,24 +199,39 @@
             <button class="btn btn-buy" type="submit">Thêm vào giỏ</button>
             <!-- <button class="btn btn-add-to-cart" >Thêm vào giỏ</button> -->
 
-            <script>
-                // $('form').submit(function(event) {
-                //     var qty = parseInt($('input[name="qty"]').val()); // Lấy giá trị số lượng sản phẩm người dùng nhập vào
-                //     var max_qty = {
-                //         {
-                //             $value - > product_qty
-                //         }
-                //     }; // Lấy giá trị số lượng sản phẩm có sẵn từ PHP
-                //     if (qty > max_qty) {
-                //         event.preventDefault(); // Ngăn không cho form gửi đi nếu số lượng sản phẩm vượt quá số lượng có sẵn
-                //         if (confirm('Số lượng sản phẩm vượt quá số lượng có sẵn. Bạn có muốn đặt theo số lượng có sẵn không?')) {
-                //             $('input[name="qty"]').val(max_qty); // Nếu người dùng đồng ý thì gán giá trị số lượng sản phẩm là số lượng tối đa có sẵn
-                //         }
-                //     }
-                // });
-            </script>
 
         </form>
+
+
+
+        <!-- <script>
+            function validateForm() {
+                var qty = parseInt(document.getElementsByName("qty")[0].value);
+                var max_qty = parseInt("{{$value->product_qty}}");
+                if (qty > max_qty) {
+                    alert('Số lượng sản phẩm vượt quá số lượng có sẵn. Bạn có muốn đặt theo số lượng có sẵn không?');
+                    return false; 
+                }
+                return true; 
+            }
+        </script> -->
+
+        <script>
+            function validateForm() {
+                var qtyInput = document.getElementsByName("qty")[0];
+                var qty = parseInt(qtyInput.value);
+                var max_qty = parseInt("{{$value->product_qty}}");
+
+                if (qty > max_qty) {
+                    alert('Số lượng sản phẩm vượt quá số lượng có sẵn. Bạn có muốn đặt theo số lượng có sẵn không?');
+                    qtyInput.value = max_qty; // Gán lại giá trị tối đa vào trường nhập liệu
+                    return false;
+                }
+                return true;
+            }
+        </script>
+
+
     </section>
 
     <!-- <div class="modal" id="myModal">
